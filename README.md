@@ -20,3 +20,4 @@ To preprocess our data in our [Jupyter Notebook](https://github.com/123devamther
 **dest**: The three-letter code of the destination airport for the flight.<br/> 
 **air_time**: The duration of the flight, in minutes.<br/> 
 **distance**: The distance between the origin and destination airports, in miles.<br/> 
+Source: https://www.kaggle.com/datasets/matinsajadi/flights

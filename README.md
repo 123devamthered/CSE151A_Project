@@ -32,3 +32,5 @@ After running our first model, the training loss/mse is about 2044.3040, with th
 
 **Future models/improvements** <br/> 
 We might experiment with changing the number of parameters and compare the performance of the model and also fine-tune the hyperparameters by increasing/decreasing the learning rate and see how it affects the mse. In terms of different models, if RNN continues to perform poorly, we might experiment with a multilayer perceptron neural network, returning to the basic neural network model to see if there will be any differences or improvements. We suspect that using RNN might be overcomplicating the calculation and problem. 
+
+[Link to notebook for Milestone 3](https://colab.research.google.com/drive/1DPWlak3ZpMsrB1rbW8aA-p5RigMdIr5P?usp=sharing)

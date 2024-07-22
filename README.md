@@ -21,3 +21,14 @@ To preprocess our data in our [Jupyter Notebook](https://github.com/123devamther
 **air_time**: The duration of the flight, in minutes.<br/> 
 **distance**: The distance between the origin and destination airports, in miles.<br/> 
 Source: https://www.kaggle.com/datasets/matinsajadi/flights
+
+## Milestone 3
+We have constructed an LSTM-based neural network RNN model to perform machine learning recursively.  It uses Long Short-Term Memory (LSTM) units to better capture and learn from sequential data. We have chosen LSTM networks because they are particularly effective for tasks involving time series, sequences, and other data with temporal dependencies, which our data are time sequential and might have temporal dependencies.<br/> 
+
+For the train, validation, and test set, the ground truth is the actual arrival delay, and predictions are the arrival delays predicted by the model for the flights both in the corresponding train, validation, and test set. However, during the training, the model's performance is also validated using the test data. <br/> 
+
+**Evaluate the model** <br/> 
+After running our first model, the training loss/mse is about 2044.3040, with the testing loss/mse about 2014.2782.  For the trivial case, mse is calculated for the case that the mean of delay time is predicted for every flight. A trivial mse of approximately 1967.0509, is calculated, which is lower than both the training and testing mse, therefore implying that both the training error and testing error are high. The training error is higher than the testing error, which shows that there is no overfitting, but the model performance is unsatisfactory. The model is on the left side of the ideal place because both losses are high which is worse than trivial, so there might be an underfit. <br/> 
+
+**Future models/improvements** <br/> 
+We might experiment with changing the number of parameters and compare the performance of the model and also fine-tune the hyperparameters by increasing/decreasing the learning rate and see how it affects the mse. In terms of different models, if RNN continues to perform poorly, we might experiment with a multilayer perceptron neural network, returning to the basic neural network model to see if there will be any differences or improvements. We suspect that using RNN might be overcomplicating the calculation and problem. 

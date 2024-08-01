@@ -99,13 +99,13 @@ https://colab.research.google.com/drive/1_FggJppGpTRlgajB7-8VfgpIBMBPLnC5?usp=sh
 ### Data Exploration and Preprocessing
 Below, we include three pairplots and a correlation matrix generated during data preprocessing as well as an analysis of each figure.
 
-![pairplot1][pairplot1.png]
-![pairplot2][pairplot2.png]
-![pairplot3][pairplot3.png]
+![pairplot1](pairplot1.png)
+![pairplot2](pairplot2.png)
+![pairplot3](pairplot3.png)
 
 From the first pairplot, in which we have set the hue of the pairplot to be the carrier, we see no distinct pattern or correlation between departure delays and arrival delays across different carriers, indicating variability in delay patterns among carriers. In the second pairplot, in which the hue is set to the “origin” airport of the flight,  we see that some origin airports exhibit distinct delay patterns. For example, some origins may have more frequent longer delays. How an airport was designed or how it handles air traffic control could lead to more or less congestion and delays. Lastly, for the third pairplot, in which the hue is set to the destination airport, the pattern of arrival delays appears more varied across destinations, suggesting that certain destinations are more prone to delays.
 
-![correlation matrix][correlation_matrix.png]
+![correlation matrix](correlation_matrix.png)
 
 Looking at the correlation matrix, we can see that the variable with the strongest relationship with our target variable, “arr_delay”, is the variable “dep_delay” which measures departure delay. Intuitively, this makes sense considering that if the departure delay of a flight changes, there is a very strong likelihood that the arrival delay of the same flight also changes. Thus, it would make sense that they have the strongest correlation with a value of +0.91, indicating that if the departure delay goes up, so does the arrival delay and if the departure delay goes down, so does the arrival delay. The weakest correlation between the target variable arrival delay and another variable is the one between arrival delay and the variable “day” which indicates the day of the month during which the flight took place. 
 
@@ -113,11 +113,11 @@ Looking at the correlation matrix, we can see that the variable with the stronge
 After training our initial model as described, we have arrived with a training loss/mse of about 2022.7766, with the testing loss/mse about 2100.8508. To evaluate the performance of our model, we created a trivial case, where the mse is calculated for the case that the mean of delay time is predicted for every flight. A trivial mse of approximately 1967.0509, is calculated, which is lower than both the training and testing mse, therefore implying that both the training error and testing error are high. The training error is higher than the testing error, which shows that there is no overfitting, but the model performance is unsatisfactory, or in other words, horrible. The model is on the left side of the ideal place in a fitting graph because both losses are high which is worse than trivial, so there might be an underfit.
 With this unsatisfactory results, we have come to 2 conclusions, either there was a major error in our model, or building a LSTM RNN for our dataset wasn’t a good fit. Therefore after our first model, we seek to debug and improve our model parameters, run hyperparameter tuning, or create a new neural network to train on our dataset and compare the MSE.
 
-![loss and accuracy of initial model][loss_accuracy.png]
+![loss and accuracy of initial model](loss_accuracy.png)
 
 The above plots show the history of loss and accuracy over the three epochs when our first model was being trained. Both plots show a random distribution, showing that our model was not performing well and was likely under fitted.
 
-![training and validation mse of intial model][training_val_mse.png]
+![training and validation mse of intial model](training_val_mse.png)
 
 The above graph shows the training and validation MSE over the three epochs when our initial model was being trained. It shows that the validation MSE was constant at approximately 2100 while the training mse was constant at about 2022.
 

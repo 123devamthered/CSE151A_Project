@@ -127,7 +127,7 @@ The above graph shows the training and validation MSE over the three epochs when
 ### Model 2
 After hyperparameter tuning, our model had an MSE of 408.4965515136719. This final model had 3 bidirectional Gated Recurrent Unit (GRU) layers, each with a dropout rate of 0.00016219921637706627 and a ReLU activation function, and 1 Dense layer with a linear activation function. There were 128 nodes in our first layer, 40 in our next 2 layers and 1 in our last layer. Our best model also had no Batch Normalization, a learning rate of about 0.002, and used the Adam optimizer.
 
-![second model training and validation mse](second_model_training_val.png)
+![second model training and validation mse](second_model_training_val_mse.png)
 
 The above graph shows the training and validation MSE over the 5 epochs when our second model was being trained. It shows that the validation MSE was initially low around 440 and continued to decrease towards 408 while the training mse was constant at first up high around 500 and also decreased throughout the training epochs to approximately 407. In the final epoch, both training and validation MSE is close, which implies no overfitting.
 

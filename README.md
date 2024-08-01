@@ -127,6 +127,10 @@ The above graph shows the training and validation MSE over the three epochs when
 ### Model 2
 After hyperparameter tuning, our model had an MSE of 408.4965515136719. This final model had 3 bidirectional Gated Recurrent Unit (GRU) layers, each with a dropout rate of 0.00016219921637706627 and a ReLU activation function, and 1 Dense layer with a linear activation function. There were 128 nodes in our first layer, 40 in our next 2 layers and 1 in our last layer. Our best model also had no Batch Normalization, a learning rate of about 0.002, and used the Adam optimizer.
 
+![second model training and validation mse](second_model_training_val.png)
+
+The above graph shows the training and validation MSE over the 5 epochs when our second model was being trained. It shows that the validation MSE was initially low around 440 and continued to decrease towards 408 while the training mse was constant at first up high around 500 and also decreased throughout the training epochs to approximately 407. In the final epoch, both training and validation MSE is close, which implies no overfitting.
+
 ## Discussion
 ### Data Exploration and Preprocessing
 During data exploration, we found that our dataset only included information on flights in 2013 taking off from three airports (John F. Kennedy International Airport, LaGuardia Airport, Newark Liberty International Airport) in the New York Metropolitan Area, which we felt was too narrow of a scope to accurately predict arrival delays for flights across all years and airports; however, this dataset ultimately had more observations and was cleaner than other datasets we could find. Additionally, we thought weather conditions of a flight would be a great predictor of delays, but could not find a dataset containing the weather at the origin and destination airports at a specific date and time.

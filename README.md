@@ -74,16 +74,21 @@ The Dense output layer has 10 nodes and a softmax activation function.
 ```model.add(Dense(10, activation='softmax'))```
 
 We used an Adaptive Moment Estimation (Adam) optimizer with a learning rate of 0.001.
+
 ```opt = tf.keras.optimizers.Adam(learning_rate=0.001)```
+
 For the train, validation, and test set, the ground truth is the actual arrival delay, and predictions are the arrival delays predicted by the model for the flights both in the corresponding train, validation, and test set. During the training, the model's performance is also validated using the test data.
 We trained the model for 3 epochs then compared this to a trivial model that always predicts the mean arrival delay.
+
 Link to Colab Notebook Containing Initial Model:
 https://colab.research.google.com/drive/1DPWlak3ZpMsrB1rbW8aA-p5RigMdIr5P?usp=sharing 
 
 ### Model 2
 In our second model, we changed the Dense output layer to have 1 node and use linear activation function as the output should be one continuous value(which is time). We found out a significant error in model 1 that mistakenly have our output layer to be 10 nodes with a softmax activation function that was intended for classification instead of regression. Which, it is the main cause of high error/loss in our mse for our Model 1.
 Then we perform hyperparameter tuning to further improve our second model. We optimized the number of layers (tested 3, 4, and 5 layers), the activation function of the hidden layers (tested sigmoid, tanh, and ReLU), the number of nodes in each hidden layer (tested integers 15 to 150), whether each hidden layer was Bidirectional (since that is another degree of choice in building an RNN), whether to use LSTM or GRU layers, the dropout value (tested 0.0001 to 1 using logistic sampling), whether to use Batch Normalization after each hidden layer, the learning rate (tested 1e-4 to 1e-2 using logistic sampling), and the optimizer (tested SGD, Adam, and RMSProp). We ran Random Search on 500 trials.
-Link to Colab Notebook Containing Second Model and Hyperparameter Tuning: https://colab.research.google.com/drive/1_FggJppGpTRlgajB7-8VfgpIBMBPLnC5?usp=sharing
+
+Link to Colab Notebook Containing Second Model and Hyperparameter Tuning:
+https://colab.research.google.com/drive/1_FggJppGpTRlgajB7-8VfgpIBMBPLnC5?usp=sharing
 
 ## RESULTS
 ### Data Exploration and Preprocessing
@@ -152,10 +157,14 @@ Sydney:
 * wrote function outputting hour offset between origin and destination airports 
 * wrote function outputting whether a flight took off and landed on the same day
 * wrote milestone 1 abstract
+
+
 Lulu: Team Leader
 * Write up for milestone 2 and 3
 * collaborated on hyperparameter tuning code with Sydney
 * ran hyperparameter tuning on SDSC
+
+
 Genie:
 * created figures for data exploration
 * Wrote code for data pre-processing
@@ -163,11 +172,15 @@ Genie:
 * conducted research for initial model
 * wrote code for initial model
 * evaluated initial model 
+
+
 Devam:
 * Data preprocessing: wrote function converting hhmm format to minutes since Janruary 1st 2013
 * Conducted data exploration to discover an inconsistency between our dataset columns
 * Looked for supplemental datasets
 * Troubleshooted hyperparameter tuning code
+
+
 Aahil:
 * found flights dataset
 * wrote functions to one-hot encode carrier, destination and origin columns of unprocessed dataset
